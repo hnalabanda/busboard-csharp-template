@@ -1,4 +1,6 @@
-﻿namespace BusBoard
+﻿using System;
+
+namespace BusBoard
 {
     public class Bus
     {
@@ -15,11 +17,11 @@
         public string bearing;
         public string destinationNaptanId;
         public string destinationName { get; set; }
-        public string timestamp;
+        public DateTime timestamp { get; set; }
         public int timeToStation{ get; set; }
         public string currentLocation;
-        public string towards;
-        public string expectedArrival { get; set; }
+        public string towards{ get; set; }
+        public DateTime expectedArrival { get; set; }
         public string timeToLive;
         public string modeName;
        
