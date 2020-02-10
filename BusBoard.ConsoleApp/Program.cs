@@ -3,10 +3,13 @@
 namespace BusBoard
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var stopCode = Console.ReadLine();
+            var tflBus = new TFLBus(stopCode);
+            tflBus.getNextBusTimes(stopCode);
+            
         }
     }
 }
