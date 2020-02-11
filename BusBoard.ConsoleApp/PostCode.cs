@@ -30,7 +30,7 @@ namespace BusBoard
 
             if (lineType == "LO")
             {  
-                result= response.result.latitude;
+                result= response.result.longitude;
             }
 
             return result;
