@@ -22,6 +22,19 @@ namespace BusBoard
             this.stopCode = stopCode;
         }
 
+        public void getListOfBusStops(string lon,string lat)
+        {
+          
+           var client=new RestClient("https://api.tfl.gov.uk/");
+            var request=new RestRequest($"StopPoint?radius=500&stopTypes=NaptanPublicBusCoachTram&lat={lat}&lon={lon}",Method.GET);
+            
+            StopPoints response2 = client.Get<StopPoints>(request).Data;
+
+            DisplayStopList(response2.stopPoints);
+
+
+        }
+        
         public void getNextBusTimes(string stopCode)
         {   
             var client=new RestClient("https://api.tfl.gov.uk/");
@@ -56,6 +69,17 @@ namespace BusBoard
                 {
                     break;
                 }
+            }
+        }
+        private void DisplayStopList(List<StopPointDetail> stopsList)
+        {
+           
+            foreach (StopPointDetail stopPointDetails in stopsList)
+            {
+            
+                Console.Write(stopPointDetails.naptanId + "   ");
+                Console.WriteLine(stopPointDetails.indicator + "   ");
+             
             }
         }
     }
