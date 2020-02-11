@@ -6,10 +6,14 @@ namespace BusBoard
     { 
         static void Main(string[] args)
         {
-            var stopCode = Console.ReadLine();
-            var tflBus = new TFLBus(stopCode);
-            tflBus.getNextBusTimes(stopCode);
-            
+            var postCode = Console.ReadLine();
+            PostCode pc=new PostCode();
+   
+             var tflBus = new TFLBus();
+             tflBus.getListOfBusStops(pc.GetLatLongFromPostCode("LO",postCode),pc.GetLatLongFromPostCode("LA",postCode));
+             var stopCode = Console.ReadLine();
+              tflBus.getNextBusTimes(stopCode);
+
         }
     }
 }
