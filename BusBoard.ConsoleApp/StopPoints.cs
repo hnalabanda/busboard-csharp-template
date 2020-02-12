@@ -10,5 +10,7 @@ namespace BusBoard
     {
         public string naptanId{ get; set; }
         public string indicator{ get; set; }
+        public double distance{ get; set; }
+        public string commonName{ get; set; }
     }
 }

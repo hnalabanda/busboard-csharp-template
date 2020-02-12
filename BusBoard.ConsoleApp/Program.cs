@@ -11,8 +11,8 @@ namespace BusBoard
    
              var tflBus = new TFLBus();
              tflBus.getListOfBusStops(pc.GetLatLongFromPostCode("LO",postCode),pc.GetLatLongFromPostCode("LA",postCode));
-             var stopCode = Console.ReadLine();
-              tflBus.getNextBusTimes(stopCode);
+        //     var stopCode = Console.ReadLine();
+          
 
         }
     }
